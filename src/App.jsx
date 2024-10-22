@@ -1,20 +1,25 @@
-
-import './App.css'
-import NavBar from './components/NavBar'
-import ItemListContainer from './components/ItemListContainer'
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import NavBar from "./components/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
 
 function App() {
-  return(
+  return (
     <>
       <header>
         <NavBar />
-      </header> 
+      </header>
       <main>
-        <ItemListContainer info="Bienvenidos a Socratech, Aqui podrás visualizar nuestros productos" />
-      </main> 
-    </> 
-  )
+        <Router>
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            {/* <Route path="/category/:categoryId" element={} /> */}
+          </Routes>
+        </Router>
+      </main>
+    </>
+  );
 }
 
-export default App
-
+export default App;

@@ -1,18 +1,16 @@
-import cartImg from '../assets/carrito.png'
-
+import cartImg from "../assets/carrito.png";
 
 const CartWidget = () => {
+  return (
+    <>
+      <section className="cart-widget">
+        <div></div>
 
-    return (
-        <>
-            <section className="cart-widget">
-                
-                    <img src={cartImg} alt="cart"></img>
-                    <span>5</span>
-               
-            </section>
-        </>
-    )   
-}
+        <img src={cartImg} alt="cart"></img>
+        <span>0 </span>
+      </section>
+    </>
+  );
+};
 
 export default CartWidget;

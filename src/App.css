@@ -30,10 +30,21 @@
   }
 }
 
-.card {
-  padding: 2em;
+.flex-container {
+  display: flex;
+  justify-content: space-between;
 }
-
-.read-the-docs {
-  color: #888;
+.reduce-img {
+  height: 100%;
+  object-fit: contain;
+}
+.font-size {
+  font-size: 80%;
+}
+.big-price {
+  font-size: 3em;
+}
+.detail-img {
+  max-height: 450px;
+  object-fit: contain;
 }

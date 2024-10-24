@@ -1,22 +1,28 @@
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   return (
     <>
       <span>
-        <b>SOCRATECH </b>
-      </span>{" "}
+        <b>
+          <Link to="/">SocraTech</Link>
+        </b>
+      </span>
       {/* Etiquetas a modificar xd (la idea es poner un logo o algo) */}
       <nav>
         <ul>
           <li>
-            <a href="/">Auriculares</a>
+            <Link to="/category/electronics">Electronica</Link>
           </li>
           <li>
-            <a href="/"> Teclados</a>
+            <Link to="/category/jewelery">Joyeria</Link>
           </li>
           <li>
-            <a href="/">SmartWatchs</a>
+            <Link to="/category/men's clothing">Ropa de hombre</Link>
+          </li>
+          <li>
+            <Link to="/category/women's clothing">Ropa de mujer</Link>
           </li>
         </ul>
       </nav>

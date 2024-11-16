@@ -5,7 +5,20 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addItem = (item) => {
-    setCart([...cart, item]);
+    const itemIndex = cart.findIndex((cartItem) => cartItem.id === item.id);
+
+    if (itemIndex === -1) {
+      setCart([...cart, item]);
+    } else {
+      const newCart = [...cart];
+      newCart[itemIndex].quantity += item.quantity;
+      setCart(newCart);
+    }
+  };
+
+  const removeItem = (itemId) => {
+    const newCart = cart.filter((item) => item.id !== itemId);
+    setCart(newCart);
   };
 
   const clearCart = () => {
@@ -19,7 +32,9 @@ const CartProvider = ({ children }) => {
   console.log(cart);
 
   return (
-    <cartContext.Provider value={{ cart, addItem, clearCart, getQuantity }}>
+    <cartContext.Provider
+      value={{ cart, addItem, removeItem, clearCart, getQuantity }}
+    >
       {children}
     </cartContext.Provider>
   );

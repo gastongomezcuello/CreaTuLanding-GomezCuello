@@ -1,17 +1,28 @@
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { getFirestore, collection, doc, getDoc, getDocs, query, where, runTransaction } from "firebase/firestore";
 import { app } from "./config";
 
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://support.google.com/firebase/answer/7015592
-// const firebaseConfig = {
-//     FIREBASE_CONFIGURATION
-// };
-
-// Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
 
-const getProducts = async () => {
+export const getProducts = async () => {
   const querySnapshot = await getDocs(collection(db, "products"));
   const products = querySnapshot.docs.map((doc) => doc.data());
+  
   return products;
 };
+
+
+export const getProductsByCategory = async (category) => {
+  const q = query(collection(db, "products"), where("category", "==", category));
+  const querySnapshot = await getDocs(q);
+  const products = querySnapshot.docs.map((doc) => doc.data());
+  
+  return products;
+};
+
+export const getProductById = async (id) => {
+  const docRef = doc(db, "products", id);
+  const docSnap = await getDoc(docRef);
+  
+  return docSnap.exists() ? docSnap.data() : null;
+};
+

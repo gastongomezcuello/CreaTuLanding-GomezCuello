@@ -13,16 +13,16 @@ function NavBar() {
       <nav>
         <ul>
           <li>
-            <Link to="/category/electronics">Electronica</Link>
+            <Link to="/category/smartwatches">Smartwatches</Link>
           </li>
           <li>
-            <Link to="/category/jewelery">Joyeria</Link>
+            <Link to="/category/auriculares">Auriculares</Link>
           </li>
           <li>
-            <Link to="/category/men's clothing">Ropa de hombre</Link>
+            <Link to="/category/parlantes">Parlantes</Link>
           </li>
           <li>
-            <Link to="/category/women's clothing">Ropa de mujer</Link>
+            <Link to="/category/informatica">Informática</Link>
           </li>
         </ul>
       </nav>

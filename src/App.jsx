@@ -25,6 +25,7 @@ function App() {
               element={<ItemDetailContainer />}
             />
             <Route path="/*" element={<PageNotFound />} />
+            <Route path="/404" element={<PageNotFound />} />
           </Routes>
         </main>
       </Router>

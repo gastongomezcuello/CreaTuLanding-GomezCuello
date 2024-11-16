@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
+import Loader from "./Loader";
 
 const ItemDetailContainer = () => {
-  const [item, setItem] = useState({});
+  const [item, setItem] = useState(null);
   const { productId } = useParams();
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const ItemDetailContainer = () => {
       });
   }, [productId]);
 
-  return <ItemDetail item={item} />;
+  return <>{item ? <ItemDetail item={item} /> : <Loader />}</>;
 };
 
 export default ItemDetailContainer;

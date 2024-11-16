@@ -11,7 +11,7 @@ const ItemDetail = ({ item }) => {
           <img src={item.image} alt={item.title} className="w-50  detail-img" />
           <div>
             <b className="big-price">${item.price}</b>
-            <ItemCount />
+            <ItemCount item={item} />
           </div>
         </section>
         <p>{item.description}</p>

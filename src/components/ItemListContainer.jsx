@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
 import ItemList from "./ItemList";
+import Loader from "./Loader";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -17,7 +19,7 @@ const ItemListContainer = () => {
       });
   }, [categoryName]);
 
-  return <ItemList items={items} />;
+  return <>{items.length ? <ItemList items={items} /> : <Loader />}</>;
 };
 
 export default ItemListContainer;

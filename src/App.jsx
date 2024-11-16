@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import NavBar from "./components/NavBar";
@@ -24,7 +24,7 @@ function App() {
               path="/product/:productId"
               element={<ItemDetailContainer />}
             />
-            <Route path="*" element={<PageNotFound />} />
+            <Route path="/*" element={<PageNotFound />} />
           </Routes>
         </main>
       </Router>

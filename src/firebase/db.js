@@ -1,4 +1,4 @@
-import { getFirestore, collection, doc, getDoc, getDocs, query, where, runTransaction } from "firebase/firestore";
+import { getFirestore, collection, doc, getDoc, getDocs, query, where, runTransaction, addDoc } from "firebase/firestore";
 import { app } from "./config";
 
 const db = getFirestore(app);
@@ -25,4 +25,21 @@ export const getProductById = async (id) => {
   
   return docSnap.exists() ? docSnap.data() : null;
 };
+
+export const addOrder = async (order) => {
+  try {
+    const docRef = await addDoc(collection(db, "orders"), order);
+    return docRef.id;
+  } catch (e) {
+
+    console.error("Error adding document: ", e);
+    return null;
+  }
+  
+  
+};
+
+
+
+
 

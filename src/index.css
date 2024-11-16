@@ -21,6 +21,9 @@ a {
 a:hover {
   color: #FFD700;
 }
+a:hover span {
+  background-color: #FFD700;
+}
 
 body {
   margin: 0;

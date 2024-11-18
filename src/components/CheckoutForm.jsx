@@ -1,8 +1,11 @@
 import { serverTimestamp } from "firebase/firestore";
 import { addOrder } from "../firebase/db";
+import { useNavigate } from "react-router-dom";
 
-const CheckoutForm = ({ cart, getTotal }) => {
-  const handleSubmit = (e) => {
+const CheckoutForm = ({ cart, getTotal, clearCart }) => {
+  const navigate = useNavigate();  
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const [name, email, phone] = form.elements;
@@ -18,7 +21,13 @@ const CheckoutForm = ({ cart, getTotal }) => {
       total: getTotal(),
     };
 
-    addOrder(order);
+    const orderId = await addOrder(order);
+    if (orderId) {
+      clearCart();
+      navigate(`/order-success/${orderId}`);
+    } else {
+      console.error("Error al procesar la orden.");
+    }
   };
 
   return (

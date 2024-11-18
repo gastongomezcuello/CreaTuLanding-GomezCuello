@@ -35,8 +35,6 @@ export const addOrder = async (order) => {
     console.error("Error adding document: ", e);
     return null;
   }
-  
-  
 };
 
 

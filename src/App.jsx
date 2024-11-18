@@ -6,6 +6,7 @@ import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import PageNotFound from "./components/PageNotFound";
 import Cart from "./components/Cart";
+import OrderSuccess from "./components/OrderSuccess";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               element={<ItemDetailContainer />}
             />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/order-success/:orderId" element={<OrderSuccess />} />
             <Route path="/*" element={<PageNotFound />} />
             <Route path="/404" element={<PageNotFound />} />
           </Routes>

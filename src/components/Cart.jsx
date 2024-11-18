@@ -15,7 +15,7 @@ const Cart = () => {
 
   return (
     <section className="grid-container">
-      <div className="cart">
+      <div>
         <h1>Tu carrito de compra</h1>
         <div>
           {cart.length ? (
@@ -27,13 +27,13 @@ const Cart = () => {
           )}
         </div>
       </div>
-      <div className="finish">
+      <div>
         <h2>Tu compra: ${getTotal()}</h2>
         {cart.length ? (
           <>
             <button onClick={handleClearClick}>Vaciar carrito</button>
             <h4>Completa tus datos para finalizar la compra</h4>
-            <CheckoutForm cart={cart} getTotal={getTotal} />
+            <CheckoutForm cart={cart} getTotal={getTotal} clearCart={clearCart} />
           </>
         ) : (
           <p>Volvé a mirar nuestros productos</p>

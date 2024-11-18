@@ -32,7 +32,7 @@ Sigue los pasos a continuación para ejecutar el proyecto en tu máquina local:
 
 1. Clona el repositorio desde GitHub:
    ```bash
-   git clone https://github.com/tu-usuario/socratech.git
+   git clone https://github.com/gastongomezcuello/CreaTuLanding-GomezCuello.git
 2. Navega al directorio del proyecto:
    ```bash
    cd socratech

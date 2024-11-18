@@ -59,7 +59,7 @@ El proyecto sigue una arquitectura modular con componentes reutilizables. Aquí 
 
 ## Ejemplo de uso (Código destacado)
 
-    ```javascript
+
     const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;

@@ -35,7 +35,7 @@ Sigue los pasos a continuación para ejecutar el proyecto en tu máquina local:
    git clone https://github.com/gastongomezcuello/CreaTuLanding-GomezCuello.git
 2. Navega al directorio del proyecto:
    ```bash
-   cd socratech
+   cd CreaTuLanding-GomezCuello
 3. Instala las dependencias:
    ```bash
    npm install

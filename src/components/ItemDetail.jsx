@@ -10,7 +10,6 @@ const ItemDetail = ({ item }) => {
         <section className="flex-container">
           <img src={item.image} alt={item.title} className="w-50  detail-img" />
           <div>
-            <b className="big-price">${item.price}</b>
             <ItemCount item={item} />
           </div>
         </section>

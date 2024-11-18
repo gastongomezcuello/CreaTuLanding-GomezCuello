@@ -17,12 +17,17 @@ const ItemCount = ({ item }) => {
     addItem({ ...item, quantity: count });
   };
 
+  const totalPrice = item.price * count;
+
   return (
     <div>
       <button onClick={handleSubtract}>-</button>
-      <span>{count}</span>
+      <span className="counter">{count}</span>
       <button onClick={handleAdd}>+</button>
-      <button onClick={handleAddToCart}>add to cart</button>
+      <div>
+        <b className="big-price">${totalPrice}</b>
+      </div>
+      <button onClick={handleAddToCart}>Agregar al carrito</button>
     </div>
   );
 };

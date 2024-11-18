@@ -59,25 +59,25 @@ El proyecto sigue una arquitectura modular con componentes reutilizables. Aquí 
 
 ## Ejemplo de uso (Código destacado)
 
-```javascript
-const handleSubmit = (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const [name, email, phone] = form.elements;
+    ```javascript
+    const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const [name, email, phone] = form.elements;
 
-  const order = {
-    buyer: {
-      name: name.value,
-      email: email.value,
-      phone: phone.value,
-    },
-    items: cart,
-    date: serverTimestamp(),
-    total: getTotal(),
-  };
+    const order = {
+        buyer: {
+        name: name.value,
+        email: email.value,
+        phone: phone.value,
+        },
+        items: cart,
+        date: serverTimestamp(),
+        total: getTotal(),
+    };
 
-  addOrder(order);
-};
+    addOrder(order);
+    };
 
 ## Detalles adicionales
 
